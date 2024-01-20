@@ -3,20 +3,21 @@ import { useState } from "react";
 import { translator } from "./language/language";
 import { IoIosArrowDropright, IoIosArrowDropleft } from "react-icons/io";
 
-import food1 from "../src/assets/food1.webp";
-import food2 from "../src/assets/food2.webp";
-import food3 from "../src/assets/food3.webp";
-import food4 from "../src/assets/food4.webp";
+import flower1 from "../src/assets/flower1.jpg"
+import flower2 from "../src/assets/flower2.jpeg"
+import flower3 from "../src/assets/flower3.jpg"
+import flower4 from "../src/assets/flower4.jpg"
 
-const staticArr = [{ title: "food1",description:"description1",image:food1},{ title: "food2",description:"description2",image:food3 },{ title: "food3",description:"description3" ,image:food2},{ title: "food4",description:"description4" ,image:food4}];
+
+const staticArr = [{ title: "flower1",description:"description1",image:flower1},{ title: "flower2",description:"description2",image:flower2 },{ title: "flower3",description:"description3" ,image:flower3},{ title: "flower4",description:"description4" ,image:flower4}];
 
 const { Title, Paragraph } = Typography;
 
 const App = () => {
   const [translate, setTranslate] = useState<string>("uk");
-  const [current, setCurrent] = useState<number>(0);
+  const [current, setCurrent] = useState<number>(3);
 
-  const handleFood = (type: string) => {
+  const handleFlower = (type: string) => {
     let tempCurrent=current;
 
     switch (type) {
@@ -43,7 +44,7 @@ const App = () => {
             <Row justify="space-between">
               <Col span={4} md={2}>
                 <IoIosArrowDropleft
-                  onClick={() => handleFood("left")}
+                  onClick={() => handleFlower("left")}
                   style={{ cursor: "pointer" }}
                   size={25}
                 />
@@ -57,7 +58,7 @@ const App = () => {
               </Col>
               <Col span={4} md={2}>
                 <IoIosArrowDropright
-                  onClick={() => handleFood("right")}
+                  onClick={() => handleFlower("right")}
                   style={{ cursor: "pointer" }}
                   size={25}
                 />
