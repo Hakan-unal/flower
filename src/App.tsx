@@ -14,7 +14,7 @@ const staticArr = [{ title: "flower1",description:"description1",image:flower1},
 const { Title, Paragraph } = Typography;
 
 const App = () => {
-  const [translate, setTranslate] = useState<string>("uk");
+  const [translate, setTranslate] = useState<string>("en");
   const [current, setCurrent] = useState<number>(3);
 
   const handleFlower = (type: string) => {
@@ -54,6 +54,7 @@ const App = () => {
                   unCheckedChildren={<div>UK</div>}
                   checkedChildren={<div>EN</div>}
                   onChange={(checked) => setTranslate(checked ? "en" : "uk")}
+                  value={translate==='en'?true:false}
                 />
               </Col>
               <Col span={4} md={2}>
